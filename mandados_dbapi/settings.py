@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mandados_app',
+    'mandadero_app',
+    'client_app',
     'rest_framework',
 ]
 
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'mandados_dbapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mandadosdb',
+        'NAME': 'mandados',
         'USER': 'postgres',
         'PASSWORD': "invalido1234",
         'HOST': 'localhost',

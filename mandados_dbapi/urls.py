@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from mandados_app import views as mandados_views
+from client_app import views as client_views
+from mandadero_app import views as mandadero_views
 
 #Router creation
 router = DefaultRouter()
@@ -9,12 +11,12 @@ router = DefaultRouter()
 #Client
 router.register(
 	r'mandadero',
-	mandados_views.mandadero_view_set,
+	mandadero_views.mandadero_view_set,
 )
 
 router.register(
 	r'cliente',
-	mandados_views.cliente_view_set,
+	client_views.cliente_view_set,
 )
 
 router.register(

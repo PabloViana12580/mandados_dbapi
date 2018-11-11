@@ -1,20 +1,11 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
 from . import models
-
-class mandadero_serializer(serializers.ModelSerializer):
-	class Meta:
-		model = models.Mandadero
-		fields = '__all__'
-
-class cliente_serializer(serializers.ModelSerializer):
-	class Meta:
-		model = models.Cliente
-		fields = '__all__'
+from client_app import models as modelsClient
+from mandadero_app import models as modelsMandadero
 
 class mandado_serializer(serializers.ModelSerializer):
-	done_by = models.Mandadero
-	done_for = models.Cliente
+	done_by = modelsMandadero.Mandadero
+	done_for = modelsClient.Cliente
 	class Meta:
 		model = models.Mandado
 		fields = '__all__'
@@ -27,8 +18,9 @@ class promociones_serializer(serializers.ModelSerializer):
 
 class lugar_serializer(serializers.ModelSerializer):
 	mandado_inplace = models.Mandado
-	visited_by = models.Mandadero
+	visited_by = modelsMandadero.Mandadero
 	class Meta:
 		model = models.Lugar
 		fields = '__all__'
+
 

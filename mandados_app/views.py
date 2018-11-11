@@ -3,17 +3,9 @@ from rest_framework import mixins
 from . import models, serializers
 
 # Create your views here.
-class mandadero_view_set(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,viewsets.GenericViewSet):
-	queryset = models.Mandadero.objects.all()
-	serializer_class = serializers.mandadero_serializer
-
-class cliente_view_set(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,viewsets.GenericViewSet):
-	queryset = models.Cliente.objects.all()
-	serializer_class = serializers.cliente_serializer
-
 class mandado_view_set(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,viewsets.GenericViewSet):
 	queryset = models.Mandado.objects.all()
-	serializer_class = serializers.mandadero_serializer
+	serializer_class = serializers.mandado_serializer
 
 class promociones_view_set(mixins.CreateModelMixin,mixins.ListModelMixin,mixins.RetrieveModelMixin,viewsets.GenericViewSet):
 	queryset = models.Promociones.objects.all()
